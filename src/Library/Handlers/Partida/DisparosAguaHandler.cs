@@ -4,7 +4,7 @@ public class DisparosAguaYBarcosHandler : BasePrefijoHandler
 {
     public GestorPartidas GestorPartidas { get; set; }
 
-    public DisparosAguaYBArcosHandler(GestorPartidas gestorPartidas, BaseHandler? next)
+    public DisparosAguaYBarcosHandler(GestorPartidas gestorPartidas, BaseHandler? next)
         : base(next)
     {
         this.GestorPartidas = gestorPartidas;
@@ -33,18 +33,21 @@ public class DisparosAguaYBarcosHandler : BasePrefijoHandler
             remitente = "No hay ninguna partida activa";
             return true;
         }
-        var aguas = partida.JugadorA.Tablero.ObtenerAguas();
-        var tocados = partida.JugadorB.Tablero.ObtenerTocados();
-        var aguas = partida.JugadorA.Tablero.ObtenerAguas();
-        var tocados = partida.JugadorB.Tablero.ObtenerTocados();
+
+        var aguasJugadorA = partida.JugadorA.Tablero.ObtenerAguas();
+        var tocadosJugadorA = partida.JugadorA.Tablero.ObtenerTocados();
+        var aguasJugadorB = partida.JugadorB.Tablero.ObtenerAguas();
+        var tocadosJugadorB = partida.JugadorB.Tablero.ObtenerTocados();
 
 
         remitente =
-            $">> Numero de aguas:   {aguas} \n" +
-            $">> Numero de tocados:  {tocados} ";
+            $">> Numero de aguas jugador A:   {aguasJugadorA} \n" +
+            $">> Numero de tocados jugador A :  {tocadosJugadorA} \n" + 
+            $">> Numero de aguas jugador B:   {aguasJugadorB} \n" +
+            $">> Numero de tocados jugador A :  {tocadosJugadorB} ";
 
         oponente = string.Empty;
 
-    return true;
-}
+        return true;
+    }
 }
