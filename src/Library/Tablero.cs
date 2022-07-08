@@ -30,6 +30,16 @@ public class Tablero
     /// Lista de coordenadas, que al ser atacadas, dieron "agua"
     /// </summary>
     public List<Coord> Agua { get; } = new();
+    /// <summary>
+    /// Cantidad de Aguas 
+    /// </summary>
+    public int NumeroAgua { get; set; }
+
+    /// <summary>
+    /// Cantidad de Tocados 
+    /// </summary>
+    public int NumeroTocados { get; set; }
+
 
     /// <summary>
     /// Construye un tablero de 10x10
@@ -143,7 +153,8 @@ public class Tablero
     /// <exception cref="CoordenadaFueraDelTablero">
     /// Si la coordenada no es válida para el tablero
     /// </exception>
-    /// <returns>El restulado del ataque</returns>
+
+    
     public ResultadoAtaque Atacar(Coord coord)
     {
         if (!EsValida(coord))
@@ -170,7 +181,14 @@ public class Tablero
 
         return ResultadoAtaque.Agua;
     }
+    public int ObtenerAguas() {
+        return this.NumeroAgua;
+    }
 
+     public int ObtenerTocados() {
+        return this.NumeroTocados;
+    }
+  
     /// <summary>
     /// Tira el Radar (cuadrícula de 3x3) con centro en 'centro'
     /// </summary>
@@ -220,6 +238,9 @@ public class Tablero
             }
         }
     }
+    
+
+
 
     /// <summary>
     /// Obtiene una lista con los barcos que aún no han sido hundidos

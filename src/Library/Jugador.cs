@@ -151,9 +151,11 @@ public class Jugador
         {
             case ResultadoAtaque.Agua:
                 Estadistica.Fallos++;
+                Tablero.NumeroAgua++;
                 break;
             case ResultadoAtaque.Tocado:
                 Estadistica.Aciertos++;
+                Tablero.NumeroTocados++;
                 break;
             case ResultadoAtaque.Hundido:
                 Estadistica.Hundidos++;
@@ -164,6 +166,7 @@ public class Jugador
 
         return resultadoAtaque;
     }
+
 
     /// <summary>
     /// Lanza el radar sobre un oponente

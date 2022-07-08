@@ -376,6 +376,7 @@ public class ControladorJuego
 
         return jugador.Tablero.ImprimirBarcos();
     }
+    
 
     /// <summary>
     ///

@@ -50,8 +50,9 @@ public class BatallaNaval
             new JugadasHandler(GestorPartidas,
             new RelojHandler(GestorPartidas,
             new RadarHandler(GestorPartidas,
+            new DisparosAguaYBarcosHandler(GestorPartidas,
             new TableroHandler(GestorPartidas,
-            new NullHandler()))))))))))));
+            new NullHandler())))))))))))));
     }
 
     /// <summary>
